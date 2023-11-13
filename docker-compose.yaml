@@ -1,0 +1,24 @@
+version: '3.8'
+
+services:
+  db:
+    container_name: postgres_sarthak_container
+    image: postgres
+    restart: always
+    environment:
+      POSTGRES_USER: postgres
+      POSTGRES_PASSWORD: sarthak123
+      POSTGRES_DB: sarthak4_new
+
+    ports:
+      - "5432:5432"
+
+  pg-admin:
+    container_name: pgadmin4_container
+    image: dpage/pgadmin4
+    environment:
+      PGADMIN_DEFAULT_EMAIL: sarthak@admin.com
+      PGADMIN_DEFAULT_PASSWORD: sarthak
+
+    ports:
+      - "5050:80"
